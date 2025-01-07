@@ -35,6 +35,7 @@ function defineOperacao (op) {
     numeroAtualInput = '';
 }
 
+// Função para realizar o cálculo
 function calculo() {
     const anterior = parseFloat(numeroAnteriorInput);
     const atual = parseFloat(numeroAtualInput);
@@ -60,7 +61,6 @@ function calculo() {
     }
 
     // para continuar somando
-
     numeroAtualInput = resultado.toString()
     operacao = null;
     numeroAnteriorInput = '';
