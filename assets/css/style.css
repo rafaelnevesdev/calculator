@@ -42,7 +42,7 @@ body {
     color: white;
     border: none;
     border-radius: 5px;
-    height: 50px;
+    min-height: 50px;
     font-size: 1em;
     cursor: pointer;
     transition: background 0.3 ease;
@@ -62,7 +62,7 @@ body {
 
 .button.equal {
     background: #28a745;
-    grid-row: span 3;
+    grid-row: span 4;
 }
 
 .button.equal:hover {
