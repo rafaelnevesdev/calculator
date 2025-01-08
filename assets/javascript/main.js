@@ -14,13 +14,23 @@ buttons.forEach(button => {
         // forEach percorre todos os botões da calculadora
         // addEventListener adiciona um "escutador de cliques" para cada botão
         // textContent pega o texto dentro do botão clicado
+
+        if (value === 'AC') {
+            limpaTudo(); // Limpa tudo
+        } else if (value === '=') {
+            calculo(); // Realiza o cálculo
+        } else if (['+', '-', '*', '/'].includes(value)) {
+            defineOperacao(value); // Define a operação
+        } else {
+            adicionaNumero(value); // Adiciona números ou ponto
+        }
     });
 });
 
 // Função para adicionar números ao display
 function adicionaNumero(number) {
-    if (number === '.' && currentInput.includes('.')) return; // Impede múltiplos pontos decimais
-    currentInput += number;
+    if (number === '.' && numeroAtualInput.includes('.')) return; // Impede múltiplos pontos decimais
+    numeroAtualInput += number;
     updateDisplay();
 }
 
@@ -67,4 +77,15 @@ function calculo() {
     updateDisplay();
 }
 
+// Função para limpar todos os dados
+function limpaTudo() {
+    numeroAtualInput = '';
+    numeroAnteriorInput = '';
+    operacao = null;
+    updateDisplay();
+}
 
+// Atualiza o valor no display
+function updateDisplay() {
+    display.value = numeroAtualInput || '0';
+}
